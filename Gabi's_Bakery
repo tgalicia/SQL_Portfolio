@@ -1,18 +1,17 @@
 /*
-Creating Bakery Inventory table
-
+Creating Table for Bakery Inventory
 */
 
 CREATE TABLE gabi_bakery_inventory(
     id INT NOT NULL,
-    NAME VARCHAR(255) NOT NULL,
-    quantity INT NOT NULL); 
-INSERT INTO gabi_bakery_inventory
+    name VARCHAR(255) NOT NULL,
+    quantity INT NOT NULL
+); INSERT INTO gabi_bakery_inventory
 VALUES(1, "chocolate chip cookie", 5);
 INSERT INTO gabi_bakery_inventory
-VALUES(2, "oatmeal raisin cookie", 6);
+VALUES(2, "oatmeal raisin cookie", 4);
 INSERT INTO gabi_bakery_inventory
-VALUES(3, "sugar cookie", 15);
+VALUES(3, "sugar cookie", 1);
 INSERT INTO gabi_bakery_inventory
 VALUES(4, "chocolate pie slice", 8);
 INSERT INTO gabi_bakery_inventory
@@ -23,4 +22,17 @@ INSERT INTO gabi_bakery_inventory
 VALUES(7, "chocolate cupcake", 7);
 INSERT INTO gabi_bakery_inventory
 VALUES(8, "chocolate chunk cookie", 5);
+INSERT INTO gabi_bakery_inventory
+VALUES(9, "white chocolate cookie", 13);
 
+/*
+Analyzing items to identify quantities for restock
+*/
+
+SELECT name
+    ,
+    quantity
+FROM
+    gabi_bakery_inventory
+WHERE
+    quantity < 5 AND name LIKE "% cookie";
