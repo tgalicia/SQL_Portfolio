@@ -5,7 +5,7 @@ Analysis for Gross Sales of Product line by gender
 select gender, product_line, sum(gross_total) as product_gross_total
 from supermarket_sales
 group by product_line, gender
-order by product_gross_total;
+order by product_line, product_gross_total;
 
 /*
 Analysis for Gross Sales by store
